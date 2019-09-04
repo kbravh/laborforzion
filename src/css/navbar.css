@@ -1,0 +1,43 @@
+nav {
+    background-color: #D04925;
+    height: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+nav>div {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: none;
+}
+
+nav span {
+    font-style: normal;
+    margin: 0px;
+    color: #E9E5DD;
+    font-size: 2rem;
+    line-height: 2rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: #E9E5DD;
+}
+
+.brand-logo {
+    display: flex;
+}
+
+nav img {
+    height: 2rem;
+    margin: 0px;
+}
+
+#nav-links a {
+    margin-left: 20px;
+}
