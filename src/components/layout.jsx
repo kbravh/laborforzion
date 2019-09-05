@@ -2,7 +2,7 @@ import React from "react"
 import { css } from "@emotion/core"
 import { rhythm } from "../utils/typography"
 
-import Navbar from './navbar'
+import Navbar from './Navbar'
 
 export default ({ children }) => {
   return <div>

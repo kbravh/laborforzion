@@ -1,4 +1,4 @@
-#site-title {
+.page-title {
     display: inline-block;
     text-align: center;
     display: grid;
@@ -8,18 +8,18 @@
     color: #E9E5DD;
 }
 
-#site-title::before,
-#site-title::after {
+.page-title::before,
+.page-title::after {
     display: block;
     height: 20px;
     content: "";
-    background: url('/assets/both-squiggles.svg');
+    background: url('../assets/both-squiggles.svg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: left;
 }
 
-#site-title::after {
+.page-title::after {
     background-position: right;
 }
 

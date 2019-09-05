@@ -2,7 +2,7 @@ import React from "react"
 import { css } from "@emotion/core"
 import { Link, graphql } from "gatsby"
 import { rhythm } from "../utils/typography"
-import Layout from "../components/layout"
+import Layout from "../components/Layout"
 
 import '../css/index.css';
 
@@ -10,13 +10,13 @@ export default ({ data }) => {
   return (
     <Layout>
       <div>
-        <h1 id="site-title">{data.site.siteMetadata.title}</h1>
+        <h1 className="page-title">{data.site.siteMetadata.title}</h1>
 
         <h3 id="post-count">{data.allMarkdownRemark.totalCount} {data.allMarkdownRemark.totalCount === 1 ? `Post` : `Posts`}</h3>
 
         {data.allMarkdownRemark.edges.map(({ node }) => (
-          <div className="blog-card-background">
-            <div key={node.id} className="blog-card">
+          <div key={node.id} className="blog-card-background">
+            <div className="blog-card">
               <Link
                 to={node.fields.slug}
                 css={css`
