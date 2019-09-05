@@ -12,33 +12,35 @@ export default ({ data }) => {
       <div>
         <h1 id="site-title">{data.site.siteMetadata.title}</h1>
 
-        <h4>{data.allMarkdownRemark.totalCount} {data.allMarkdownRemark.totalCount === 1 ? `Post` : `Posts`}</h4>
+        <h3 id="post-count">{data.allMarkdownRemark.totalCount} {data.allMarkdownRemark.totalCount === 1 ? `Post` : `Posts`}</h3>
 
         {data.allMarkdownRemark.edges.map(({ node }) => (
-          <div key={node.id}>
-            <Link
-              to={node.fields.slug}
-              css={css`
-                text-decoration: none;
-                color: inherit;
-              `}
-            >
-              <h3
+          <div className="blog-card-background">
+            <div key={node.id} className="blog-card">
+              <Link
+                to={node.fields.slug}
                 css={css`
-                  margin-bottom: ${rhythm(1 / 4)};
+                  text-decoration: none;
+                  color: inherit;
                 `}
               >
-                {node.frontmatter.title}{" "}
-                <span
+                <h3
                   css={css`
-                    color: #bbb;
+                    margin-bottom: ${rhythm(1 / 4)};
                   `}
                 >
-                  — {node.frontmatter.date}
-                </span>
-              </h3>
-              <p>{node.excerpt}</p>
-            </Link>
+                  {node.frontmatter.title}{" "}
+                  <span
+                    css={css`
+                      color: #bbb;
+                    `}
+                  >
+                    — {node.frontmatter.date}
+                  </span>
+                </h3>
+                <p>{node.excerpt}</p>
+              </Link>
+            </div>
           </div>
         ))}
       </div>

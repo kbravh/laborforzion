@@ -23,6 +23,29 @@
     background-position: right;
 }
 
+#post-count {
+    color: white;
+    margin-bottom: 30px;
+}
+
+.blog-card {
+    height: 150px;
+    transform: rotate(-2deg);
+    background-color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    box-shadow: 2px 2px 2px 2px #3b403c;
+}
+
+.blog-card-background {
+    background-color: white;
+    transform: rotate(2deg);
+    margin-bottom: 40px;
+}
+
 html {
     color: #E9E5DD;
     background-color: #696464;
