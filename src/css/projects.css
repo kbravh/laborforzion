@@ -1,0 +1,46 @@
+.project-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+.project-card {
+    flex: 0 1 300px;
+    /* position must be relative for stretched link to work */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #D04925;
+    padding: 24px;
+    color: #E9E5DD;
+}
+
+.project-link::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    pointer-events: auto;
+    content: "";
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.project-card img {
+    margin: 0px;
+    transform: translateY(4px);
+}
+
+.project-card:hover {
+    background-color: #a63a1e;
+}
+
+.project-card-title {
+    font-size: 24px;
+}
