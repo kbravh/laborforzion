@@ -18,6 +18,16 @@
     background-color: #D04925;
     padding: 24px;
     color: #E9E5DD;
+    box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+.project-card img {
+    margin: 0px;
+    transform: translateY(4px);
+}
+
+.project-card:hover {
+    background-color: #a63a1e;
 }
 
 .project-link::after {
@@ -30,15 +40,6 @@
     pointer-events: auto;
     content: "";
     background-color: rgba(0, 0, 0, 0);
-}
-
-.project-card img {
-    margin: 0px;
-    transform: translateY(4px);
-}
-
-.project-card:hover {
-    background-color: #a63a1e;
 }
 
 .project-card-title {
