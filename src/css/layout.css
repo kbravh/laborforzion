@@ -1,9 +1,12 @@
 .site-container {
     margin: 0 auto;
+    padding: 20px;
+    padding-top: 40px;
 }
 
 @media (min-width: 768px) {
     .site-container {
         max-width: 90%;
+        padding: 60px;
     }
 }
