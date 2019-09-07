@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import { useStaticQuery, Link, graphql } from "gatsby"
 import Quill from '../assets/noun_quill.svg';
 import onClickOutside from "react-onclickoutside";
-import MenuIcon from '../assets/menu.svg'; 
+import MenuIcon from '../assets/menu.svg';
 
 import '../css/navbar.css'
 
