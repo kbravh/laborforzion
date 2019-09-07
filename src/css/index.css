@@ -30,8 +30,6 @@
 
 .blog-card {
     height: 150px;
-    flex: 0 0 400px;
-    max-width: 400px;
     transform: rotate(-2deg);
     background-color: white;
     padding: 20px;
@@ -42,10 +40,18 @@
     box-shadow: 2px 2px 2px 2px #3b403c;
 }
 
+@media (max-width: 576px) {
+    .blog-link h3 {
+        font-size: 1rem;
+    }
+}
+
 .blog-card-background {
     background-color: white;
     transform: rotate(2deg);
     margin-bottom: 40px;
+    flex: 1 1 400px;
+    max-width: 600px;
 }
 
 @media (min-width: 1000px) {
