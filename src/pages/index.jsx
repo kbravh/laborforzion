@@ -14,37 +14,39 @@ export default ({ data }) => {
 
         <h3 id="post-count">{data.allMarkdownRemark.totalCount} {data.allMarkdownRemark.totalCount === 1 ? `Post` : `Posts`}</h3>
 
-        {data.allMarkdownRemark.edges.map(({ node }) => (
-          <div key={node.id} className="blog-card-background">
-            <div className="blog-card">
-              <Link
-                to={node.fields.slug}
-                className="blog-link"
-                css={css`
-                  text-decoration: none;
-                  color: inherit;
-                `}
-              >
-                <h3
+        <div className="post-container">
+          {data.allMarkdownRemark.edges.map(({ node }) => (
+            <div key={node.id} className="blog-card-background">
+              <div className="blog-card">
+                <Link
+                  to={node.fields.slug}
+                  className="blog-link"
                   css={css`
-                    margin-bottom: ${rhythm(1 / 4)};
+                    text-decoration: none;
+                    color: inherit;
                   `}
                 >
-                  {node.frontmatter.title}{" "}
-                  <span
+                  <h3
                     css={css`
-                      color: #bbb;
-                      font-size: 20px;
+                      margin-bottom: ${rhythm(1 / 4)};
                     `}
                   >
-                    — {node.frontmatter.date}
-                  </span>
-                </h3>
-                <p>{node.excerpt}</p>
-              </Link>
+                    {node.frontmatter.title}{" "}
+                    <span
+                      css={css`
+                        color: #bbb;
+                        font-size: 20px;
+                      `}
+                    >
+                      — {node.frontmatter.date}
+                    </span>
+                  </h3>
+                  <p>{node.excerpt}</p>
+                </Link>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </Layout>
   )

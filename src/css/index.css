@@ -30,6 +30,8 @@
 
 .blog-card {
     height: 150px;
+    flex: 0 0 400px;
+    max-width: 400px;
     transform: rotate(-2deg);
     background-color: white;
     padding: 20px;
@@ -46,6 +48,12 @@
     margin-bottom: 40px;
 }
 
+@media (min-width: 1000px) {
+    .blog-card-background {
+    margin-right: 30px;
+    }
+}
+
 .blog-link::after {
     position: absolute;
     top: 0;
@@ -56,6 +64,21 @@
     pointer-events: auto;
     content: "";
     background-color: rgba(0, 0, 0, 0);
+}
+
+.post-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+@media (min-width: 1600px) {
+    .post-container {
+        justify-content: flex-start;
+    }
 }
 
 body {
