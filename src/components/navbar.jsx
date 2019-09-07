@@ -58,8 +58,8 @@ const NavLinksBase = () => {
       {isMenuOpen &&
         <div className="menu">
           <ul className="menu-list">
-            <li>About</li>
-            <li>Projects</li>
+            <li><Link to={`/about/`}>About</Link></li>
+            <li><Link to={`/projects/`}>Projects</Link></li>
           </ul>
         </div>
       }
