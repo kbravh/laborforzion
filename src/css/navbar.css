@@ -37,9 +37,10 @@ nav a {
 }
 
 .brand-logo h2 {
-
     margin-bottom: 0px;
     color: #E9E5DD;
+    font-size: 1.2rem;
+    line-height: 28px;
 }
 
 nav img {
@@ -95,5 +96,11 @@ nav img {
     }
     #mobile-menu {
         display: none;
+    }
+    .brand-logo h2 {
+        font-size: 1.5rem;
+    }
+    nav img {
+        height: 28px;
     }
 }
