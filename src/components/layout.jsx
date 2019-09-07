@@ -1,16 +1,14 @@
 import React from "react"
 import { css } from "@emotion/core"
 import { rhythm } from "../utils/typography"
-
 import Navbar from './Navbar'
+import '../css/layout.css';
 
 export default ({ children }) => {
   return <div>
     <Navbar />
-    <div
+    <div className="site-container"
       css={css`
-      margin: 0 auto;
-      max-width: 700px;
       padding: ${rhythm(2)};
       padding-top: ${rhythm(1.5)};
     `}
