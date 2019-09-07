@@ -19,6 +19,7 @@ export default ({ data }) => {
             <div className="blog-card">
               <Link
                 to={node.fields.slug}
+                className="blog-link"
                 css={css`
                   text-decoration: none;
                   color: inherit;
