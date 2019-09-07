@@ -49,4 +49,8 @@
 
 .project-card-title {
     font-size: 24px;
+    font-family: 'Cinzel';
+}
+.project-card-title img {
+    margin-right: 5px;
 }

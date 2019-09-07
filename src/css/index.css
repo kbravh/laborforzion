@@ -46,6 +46,23 @@
     margin-bottom: 40px;
 }
 
+body {
+    font-family: 'Gayathri', sans-serif;
+}
+
+h1, h2, h3 {
+    font-family: 'Cinzel', sans-serif;
+}
+
+h4, h5, h6 {
+    font-family: 'Gayathri', sans-serif;
+}
+
+h4 {
+    font-size: 1.2rem;
+    line-height: 1.3rem;
+}
+
 html {
     color: #E9E5DD;
     background-color: #696464;

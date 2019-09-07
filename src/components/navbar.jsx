@@ -1,5 +1,6 @@
 import React from 'react'
 import { useStaticQuery, Link, graphql } from "gatsby"
+import Quill from '../assets/noun_quill.svg';
 
 import '../css/navbar.css'
 
@@ -19,8 +20,8 @@ export default () => {
     <nav>
       <div>
         <Link to={`/`} className="brand-logo">
-          <img src="/assets/noun_quill.svg" alt=""/>
-          <span>{data.site.siteMetadata.title}</span>
+          <img src={Quill} alt=""/>
+          <h2>{data.site.siteMetadata.title}</h2>
         </Link>
 
         <div id="nav-links">

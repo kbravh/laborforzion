@@ -4,6 +4,8 @@ nav {
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-family: 'Cinzel', sans-serif;
+    font-size: 20px;
 }
 
 nav>div {
@@ -27,14 +29,21 @@ nav span {
 nav a {
     text-decoration: none;
     color: #E9E5DD;
+    cursor: pointer;
 }
 
 .brand-logo {
     display: flex;
 }
 
+.brand-logo h2 {
+
+    margin-bottom: 0px;
+    color: #E9E5DD;
+}
+
 nav img {
-    height: 2rem;
+    height: 28px;
     margin: 0px;
 }
 
