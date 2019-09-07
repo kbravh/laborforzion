@@ -47,6 +47,19 @@ nav img {
     margin: 0px;
 }
 
+#nav-links {
+    display: none;
+}
+
 #nav-links a {
     margin-left: 20px;
+}
+
+@media (min-width: 576px) {
+    #nav-links {
+        display: block;
+    }
+    #mobile-menu {
+        display: none;
+    }
 }

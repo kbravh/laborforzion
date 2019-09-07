@@ -1,6 +1,8 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { useStaticQuery, Link, graphql } from "gatsby"
 import Quill from '../assets/noun_quill.svg';
+import onClickOutside from "react-onclickoutside";
+import MenuIcon from '../assets/menu.svg'; 
 
 import '../css/navbar.css'
 
@@ -29,7 +31,44 @@ export default () => {
 
           <Link to={`/projects/`}>Projects</Link>
         </div>
+        <NavLinks/>
       </div>
     </nav>
   )
 }
+
+const NavLinksBase = () => {
+  const [isMenuOpen, setMenu] = useState(false);
+
+  // close menu when clicking outside of it
+  NavLinksBase.handleClickOutside = evt => {
+    setMenu(false);
+  }
+
+  const toggleMenu = () => {
+    setMenu(!isMenuOpen)
+  }
+
+  return (
+    <div id="mobile-menu">
+      <div className="menu-logo" onClick={toggleMenu}>
+        <img src={MenuIcon} alt="Menu" />
+      </div>
+      {/* show dropdown menu if state set to true */}
+      {isMenuOpen &&
+        <div className="menu">
+          <ul className="menu-list">
+            <li>About</li>
+            <li>Projects</li>
+          </ul>
+        </div>
+      }
+    </div>
+  )
+}
+
+const clickOutsideConfig = {
+  handleClickOutside: () => NavLinksBase.handleClickOutside
+};
+
+const NavLinks = onClickOutside(NavLinksBase, clickOutsideConfig)
