@@ -40,11 +40,6 @@
     box-shadow: 2px 2px 2px 2px #3b403c;
 }
 
-@media (max-width: 576px) {
-    .blog-link h3 {
-        font-size: 1rem;
-    }
-}
 
 .blog-card-background {
     background-color: white;
@@ -54,10 +49,9 @@
     max-width: 600px;
 }
 
-@media (min-width: 1000px) {
-    .blog-card-background {
-    margin-right: 30px;
-    }
+.blog-link {
+    text-decoration: none;
+    color: inherit;
 }
 
 .blog-link::after {
@@ -72,6 +66,15 @@
     background-color: rgba(0, 0, 0, 0);
 }
 
+.blog-card-title {
+    margin-bottom: 10px;
+}
+
+.blog-card-date {
+    color: #bbb;
+    font-size: 20px;
+}
+
 .post-container {
     display: flex;
     flex-direction: row;
@@ -81,27 +84,46 @@
     align-content: center;
 }
 
-@media (min-width: 1600px) {
-    .post-container {
-        justify-content: flex-start;
-    }
-}
-
 body {
     font-family: 'Gayathri', sans-serif;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     font-family: 'Cinzel', sans-serif;
 }
 
-h4, h5, h6 {
+h4,
+h5,
+h6 {
     font-family: 'Gayathri', sans-serif;
 }
 
 h4 {
     font-size: 1.2rem;
     line-height: 1.3rem;
+}
+
+@media (max-width: 576px) {
+    .blog-link h3 {
+        font-size: 1rem;
+    }
+    .blog-card-date {
+        font-size: 15px;
+    }
+}
+
+@media (min-width: 1000px) {
+    .blog-card-background {
+        margin-right: 30px;
+    }
+}
+
+@media (min-width: 1600px) {
+    .post-container {
+        justify-content: flex-start;
+    }
 }
 
 html {

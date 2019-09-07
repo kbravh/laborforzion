@@ -1,7 +1,5 @@
 import React from "react"
-import { css } from "@emotion/core"
 import { Link, graphql } from "gatsby"
-import { rhythm } from "../utils/typography"
 import Layout from "../components/Layout"
 
 import '../css/index.css';
@@ -18,28 +16,10 @@ export default ({ data }) => {
           {data.allMarkdownRemark.edges.map(({ node }) => (
             <div key={node.id} className="blog-card-background">
               <div className="blog-card">
-                <Link
-                  to={node.fields.slug}
-                  className="blog-link"
-                  css={css`
-                    text-decoration: none;
-                    color: inherit;
-                  `}
-                >
-                  <h3
-                    css={css`
-                      margin-bottom: ${rhythm(1 / 4)};
-                    `}
-                  >
+                <Link to={node.fields.slug} className="blog-link">
+                  <h3 className="blog-card-title">
                     {node.frontmatter.title}{" "}
-                    <span
-                      css={css`
-                        color: #bbb;
-                        font-size: 20px;
-                      `}
-                    >
-                      — {node.frontmatter.date}
-                    </span>
+                    <span className="blog-card-date"> — {node.frontmatter.date}</span>
                   </h3>
                   <p>{node.excerpt}</p>
                 </Link>
