@@ -31,7 +31,7 @@ module.exports = {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          `gayathri`,
+          `slabo+27px`,
           `cinzel`,
         ],
         display: 'swap'
