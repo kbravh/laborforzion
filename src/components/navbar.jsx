@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import { useStaticQuery, Link, graphql } from "gatsby"
-import Quill from '../assets/noun_quill.svg';
+import Pyramid from '../assets/pyramid.svg';
 import onClickOutside from "react-onclickoutside";
 import MenuIcon from '../assets/menu.svg';
 
@@ -22,7 +22,8 @@ export default () => {
     <nav>
       <div>
         <Link to={`/`} className="brand-logo">
-          <img src={Quill} alt=""/>
+          <img src={Pyramid} alt=""/>
+          {/* Icon by Prosymbols at flaticon */}
           <h2>{data.site.siteMetadata.title}</h2>
         </Link>
 

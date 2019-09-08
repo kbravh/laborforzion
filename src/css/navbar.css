@@ -40,11 +40,11 @@ nav a {
     margin-bottom: 0px;
     color: #E9E5DD;
     font-size: 1.2rem;
-    line-height: 28px;
+    line-height: 50px;
 }
 
 nav img {
-    height: 28px;
+    height: 50px;
     margin: 0px;
 }
 
@@ -98,9 +98,6 @@ nav img {
         display: none;
     }
     .brand-logo h2 {
-        font-size: 1.5rem;
-    }
-    nav img {
-        height: 28px;
+        font-size: 1.45rem;
     }
 }
