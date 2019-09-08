@@ -2,6 +2,18 @@
     color: #E9E5DD;
 }
 
+.blog-post-title img {
+    height: 60px;
+    margin-bottom: -10px;
+    margin-right: 10px;
+}
+
 .blog-post-content {
     color: #E9E5DD;
+}
+
+@media (max-width: 576px) {
+    .blog-post-title {
+        text-align: center;
+    }
 }
