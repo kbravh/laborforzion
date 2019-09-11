@@ -6,11 +6,11 @@ path: /fruit-of-the-lord
 logoImage: ./scriptures.svg
 ---
 ## Jerome
-![Jerome][jerome]
+![Scholar writing scriptures][jerome]
 St. Jerome was a Latin scholar born in Italy in the year 342 AD. Though skeptical of Christianity at first, he was eventually converted.
 Jerome was very interested in Latin literature, and was a particular fan of the Roman author Cicero. During a journey through Asia Minor
 and Syria in 373, Jerome fell very ill with a strong fever. In a letter, he describes the experience he had that changed the course
-of his life that I will summarize here. *See the full text in [Latin][1] or [English][2].*
+of his life that I will summarize here. *See the full text in [Latin][jerome-latin] or [English][jerome-english].*
 
 While unable to sleep because of the suffering of the fever, Jerome says that he was whisked away by the Spirit and carried before the
 judgement seat of Christ. When Christ asked him who he was, he responded "I am a Christian." Christ responded,
@@ -26,7 +26,9 @@ landscape would be entirely different. Jerome's love for the scriptures changed 
 
 
 
+The picture of the scholar writing scriptures was taken from the [July 2015 Friend magazine][friend].
 
 [jerome]: ./jerome.jpg
-[1]: https://earlychurchtexts.com/public/jerome_letter_22_ciceronian_or_christian.htm "Latin transcript"
-[2]: https://earlychurchtexts.com/main/jerome/jerome_ep_22_ciceronian_or_christian.shtml "English translation"
+[friend]: https://media.ldscdn.org/pdf/magazines/friend-july-2015/2015-07-00-friend-eng.pdf
+[jerome-latin]: https://earlychurchtexts.com/public/jerome_letter_22_ciceronian_or_christian.htm "Latin transcript"
+[jerome-english]: https://earlychurchtexts.com/main/jerome/jerome_ep_22_ciceronian_or_christian.shtml "English translation"

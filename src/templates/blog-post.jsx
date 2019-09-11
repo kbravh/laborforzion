@@ -22,7 +22,7 @@ export default ({ data }) => {
 }
 
 export const query = graphql`
-  {
+  query {
     markdownRemark {
       html
       frontmatter {

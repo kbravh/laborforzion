@@ -12,6 +12,20 @@
     color: #E9E5DD;
 }
 
+.blog-post-content h2 {
+    color: #E9E5DD;
+}
+
+.blog-post-content a {
+    color: #E9E5DD;
+}
+
+.blog-post-content blockquote {
+    color: #E9E5DD;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+
 @media (max-width: 576px) {
     .blog-post-title {
         text-align: center;
