@@ -9,7 +9,7 @@ export default ({ data }) => {
   return (
     <Layout>
       <Helmet>
-        <title>data.site.siteMetadata.title</title>
+        <title>{data.site.siteMetadata.title}</title>
         <meta name="Description" content={data.site.siteMetadata.description}></meta>
         <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
@@ -17,8 +17,8 @@ export default ({ data }) => {
         <link rel="manifest" href="/favicon/site.webmanifest" />
         <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#d04925" />
         <link rel="shortcut icon" href="/favicon/favicon.ico" />
-        <meta name="apple-mobile-web-app-title" content="Labor For Zion" />
-        <meta name="application-name" content="Labor For Zion" />
+        <meta name="apple-mobile-web-app-title" content={data.site.siteMetadata.title} />
+        <meta name="application-name" content={data.site.siteMetadata.title} />
         <meta name="msapplication-TileColor" content="#d04925" />
         <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
         <meta name="theme-color" content="#d04925" />
