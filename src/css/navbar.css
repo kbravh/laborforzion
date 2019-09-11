@@ -48,6 +48,10 @@ nav img {
     margin: 0px;
 }
 
+.menu-logo img {
+    height: 25px;
+}
+
 #nav-links {
     display: none;
 }

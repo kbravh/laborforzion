@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { Component } from 'react'
 import { useStaticQuery, Link, graphql } from "gatsby"
 import Pyramid from '../assets/pyramid.svg';
 import onClickOutside from "react-onclickoutside";
@@ -22,7 +22,7 @@ export default () => {
     <nav>
       <div>
         <Link to={`/`} className="brand-logo">
-          <img src={Pyramid} alt=""/>
+          <img src={Pyramid} alt="" />
           {/* Icon by Prosymbols at flaticon */}
           <h2>{data.site.siteMetadata.title}</h2>
         </Link>
@@ -32,44 +32,52 @@ export default () => {
 
           <Link to={`/projects/`}>Projects</Link>
         </div>
-        <NavLinks/>
+        <NavLinks />
       </div>
     </nav>
   )
 }
 
-const NavLinksBase = () => {
-  const [isMenuOpen, setMenu] = useState(false);
+class NavLinksClass extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      isMenuOpen: false
+    }
+  }
 
   // close menu when clicking outside of it
-  NavLinksBase.handleClickOutside = evt => {
-    setMenu(false);
+  handleClickOutside = evt => {
+    this.setState({
+      isMenuOpen: false
+    });
   }
 
-  const toggleMenu = () => {
-    setMenu(!isMenuOpen)
-  }
-
-  return (
-    <div id="mobile-menu">
-      <div className="menu-logo" onClick={toggleMenu}>
-        <img src={MenuIcon} alt="Menu" />
-      </div>
-      {/* show dropdown menu if state set to true */}
-      {isMenuOpen &&
-        <div className="menu">
-          <ul className="menu-list">
-            <li><Link to={`/about/`}>About</Link></li>
-            <li><Link to={`/projects/`}>Projects</Link></li>
-          </ul>
-        </div>
+  toggleMenu = () => {
+    this.setState(prevState => {
+      return{
+        isMenuOpen: !prevState.isMenuOpen
       }
-    </div>
-  )
+    })
+  }
+  render() {
+    return (
+      <div id="mobile-menu">
+        <div className="menu-logo" onClick={this.toggleMenu}>
+          <img src={MenuIcon} alt="Menu" />
+        </div>
+        {/* show dropdown menu if state set to true */}
+        {this.state.isMenuOpen &&
+          <div className="menu">
+            <ul className="menu-list">
+              <li><Link to={`/about/`}>About</Link></li>
+              <li><Link to={`/projects/`}>Projects</Link></li>
+            </ul>
+          </div>
+        }
+      </div>
+    )
+  }
 }
 
-const clickOutsideConfig = {
-  handleClickOutside: () => NavLinksBase.handleClickOutside
-};
-
-const NavLinks = onClickOutside(NavLinksBase, clickOutsideConfig)
+const NavLinks = onClickOutside(NavLinksClass);
