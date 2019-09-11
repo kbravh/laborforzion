@@ -9,7 +9,8 @@ export default ({ data }) => {
   return (
     <Layout>
       <Helmet>
-        <title>Labor For Zion</title>
+        <title>data.site.siteMetadata.title</title>
+        <meta name="Description" content={data.site.siteMetadata.description}></meta>
         <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
@@ -52,6 +53,7 @@ export const query = graphql`
     site {
       siteMetadata {
         title
+        description
       }
     }
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
