@@ -40,7 +40,12 @@ module.exports = {
     {
       resolve: `gatsby-transformer-remark`,
       options: {
-        plugins: [],
+        plugins: [
+          `gatsby-remark-images`,
+          `gatsby-remark-autolink-headers`,
+          `gatsby-remark-external-links`,
+          `gatsby-remark-responsive-image`
+        ],
       },
     },
     `gatsby-plugin-react-helmet`,

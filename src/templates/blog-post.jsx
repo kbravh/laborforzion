@@ -9,10 +9,7 @@ export default ({ data }) => {
   return (
     <Layout>
       <div>
-        <h1 className="blog-post-title">
-          {post.frontmatter.logoImage &&
-            <img src={post.frontmatter.logoImage.publicURL} alt=""/>
-          }
+        <h1 className="blog-post-title"><img src={post.frontmatter.logoImage.publicURL} alt=""/>
           {post.frontmatter.title}
         </h1>
         <div className="blog-post-content" dangerouslySetInnerHTML={{ __html: post.html }} />
