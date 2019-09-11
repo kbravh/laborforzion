@@ -1,5 +1,5 @@
 import React from "react"
-import {Helmet} from 'react-helmet';
+import { Helmet } from 'react-helmet';
 import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 
@@ -15,7 +15,7 @@ export default ({ data }) => {
         <meta name="author" content="Karey Higuera" />
       </Helmet>
       <div>
-        <h1 className="blog-post-title"><img src={post.frontmatter.logoImage.publicURL} alt=""/>
+        <h1 className="blog-post-title"><img src={post.frontmatter.logoImage.publicURL} alt="" />
           {post.frontmatter.title}
         </h1>
         <div className="blog-post-content" dangerouslySetInnerHTML={{ __html: post.html }} />
