@@ -2,7 +2,7 @@
 date: 2019-09-09T00:00:00.000Z
 title: The Scriptures
 language: en
-path: /fruit-of-the-lord
+path: /jerome-and-the-scriptures
 logoImage: ./scriptures.svg
 ---
 ## Jerome
