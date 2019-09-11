@@ -51,7 +51,7 @@
 
 .blog-link {
     text-decoration: none;
-    color: inherit;
+    color: #3b403c;
 }
 
 .blog-link::after {
@@ -68,6 +68,8 @@
 
 .blog-card-title {
     margin-bottom: 10px;
+    color: #3b403c;
+    font-size: 1.5rem;
 }
 
 .blog-card-date {
@@ -86,6 +88,7 @@
 
 body {
     font-family: 'Slabo 27px', sans-serif;
+    margin: 0px;
 }
 
 h1,
