@@ -15,9 +15,12 @@ export default ({ data }) => {
         <meta name="author" content="Karey Higuera" />
       </Helmet>
       <div>
-        <h1 className="blog-post-title"><img src={post.frontmatter.logoImage.publicURL} alt="" />
-          {post.frontmatter.title}
-        </h1>
+        <div className="blog-post-header">
+          <img src={post.frontmatter.logoImage.publicURL} alt="" />
+          <h1 className="blog-post-title">
+            {post.frontmatter.title}
+          </h1>
+        </div>
         <div className="blog-post-content" dangerouslySetInnerHTML={{ __html: post.html }} />
       </div>
     </Layout>

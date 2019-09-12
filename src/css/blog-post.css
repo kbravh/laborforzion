@@ -1,11 +1,17 @@
-.blog-post-title {
-    color: #E9E5DD;
+.blog-post-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
-.blog-post-title img {
+.blog-post-header img {
     height: 60px;
     margin-bottom: -10px;
     margin-right: 10px;
+}
+
+.blog-post-title {
+    color: #E9E5DD;
 }
 
 .blog-post-content {
@@ -32,6 +38,12 @@
 
 
 @media (max-width: 576px) {
+    .blog-post-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
     .blog-post-title {
         text-align: center;
     }
