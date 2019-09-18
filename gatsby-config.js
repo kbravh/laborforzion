@@ -14,7 +14,6 @@ module.exports = {
   plugins: [
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
-    `gatsby-remark-copy-linked-files`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -45,7 +44,8 @@ module.exports = {
           `gatsby-remark-images`,
           `gatsby-remark-autolink-headers`,
           `gatsby-remark-external-links`,
-          `gatsby-remark-responsive-image`
+          `gatsby-remark-responsive-image`,
+          `gatsby-remark-copy-linked-files`
         ],
       },
     },
