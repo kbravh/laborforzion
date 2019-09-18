@@ -26,13 +26,14 @@ There are many blessings promised to those who consistently study the scriptures
 ## Scriptures Are a Guiding Light
 One of my favorite stories from the scriptures is the story of the Brother of Jared and his family. There is a lot of symbolism that can be found in the story. In the second chapter of the Book of Ether, the Jaredites are ordered to create vessels for their journey to the promised land. The Brother of Jared asks the Lord, *"Behold, O Lord, wilt thou suffer that we shall cross this great water in darkness?"*<sup>2</sup> After some guidance from the Lord, the Brother of Jared crafts stones and the Lord touches them, causing the *"stones to shine in darkness, to give light unto men, women, and children, that they might not cross the great waters in darkness."*<sup>3</sup>
 
-
+In the scriptures we, or more specifically our bodies, are referred to as vessels<sup>4</sup>. We are the ones who are going to be travelling across the great sea, this world, in order to make it back to the promised land, the celestial kingdom with our Heavenly Father. Our Father was not going to permit that we travel through this world in darkness, so through the prophets the Lord created the scriptures, just as the Brother of Jared created the stones. The Lord has touched these scriptures so that they might provide light and guidance for us in this life.
 
 ---
 
 1. *See the full text of Jerome's letter in [Latin][jerome-latin] or [English][jerome-english].*
 2. [Ether 2:22](https://www.churchofjesuschrist.org/study/scriptures/bofm/ether/2.22)
 3. [Ether 6:3](https://www.churchofjesuschrist.org/study/scriptures/bofm/ether/6.3)
+4. [1 Thessalonians 4:4](https://www.churchofjesuschrist.org/study/scriptures/nt/1-thes/4.4)
 
 
 The picture of the scholar writing scriptures and the sriptures logo was taken from the [July 2015 Friend magazine][friend].

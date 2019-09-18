@@ -7,7 +7,7 @@
 module.exports = {
   siteMetadata: {
     title: `Labor For Zion`,
-    description: `A blog and collection of projects for members of the Church of Jesus Christ of Latter-Day Saints.`,
+    description: `A repository of studies and talks and a collection of projects for members of the Church of Jesus Christ of Latter-Day Saints.`,
     author: `@kbravh`,
     siteUrl: `https://laborforzion.com`
   },
