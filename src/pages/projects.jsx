@@ -8,7 +8,7 @@ const projects = [
     {
         name: "Scriptly",
         description: "Take your patriarchal blessing and style it like pages from the scriptures.",
-        link: "https://scriptly.restorerofpaths.com",
+        link: "https://scriptly.laborforzion.com",
         image: Scriptly
     }
 ]
