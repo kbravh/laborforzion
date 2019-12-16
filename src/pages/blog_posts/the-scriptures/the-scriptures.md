@@ -23,10 +23,15 @@ There are many blessings promised to those who consistently study the scriptures
 
 > There is a power in the book which will begin to flow into your lives the moment you begin a serious study of the book. You will find greater power to resist temptation. You will find the power to avoid deception. You will find the power to stay on the strait and narrow path. When you begin to hunger and thirst after those words, you will find life in greater and greater abundance.
 
+By studying the scriptures with frequency, with regularity, and with true intent, the Spirit begins to imprint the teachings of the prophets and the guidance from God on our souls. They cease to be words that we are simply familiar with and come to be part of who we are. When Christ was tempted by the devil while fasting in the desert, Christ resisted each of Satan's temptations using the scriptures.<sup>5</sup> Christ was not born with an inherent knowledge of the scriptures or doctrine; he studied and learned just as we do, but he was simply not hindered by sin.<sup>6, 7</sup>
+
 ## Scriptures Are a Guiding Light
 One of my favorite stories from the scriptures is the story of the Brother of Jared and his family. There is a lot of symbolism that can be found in the story. In the second chapter of the Book of Ether, the Jaredites are ordered to create vessels for their journey to the promised land. The Brother of Jared asks the Lord, *"Behold, O Lord, wilt thou suffer that we shall cross this great water in darkness?"*<sup>2</sup> After some guidance from the Lord, the Brother of Jared crafts stones and the Lord touches them, causing the *"stones to shine in darkness, to give light unto men, women, and children, that they might not cross the great waters in darkness."*<sup>3</sup>
 
 In the scriptures we, or more specifically our bodies, are referred to as vessels<sup>4</sup>. We are the ones who are going to be travelling across the great sea, this world, in order to make it back to the promised land, the celestial kingdom with our Heavenly Father. Our Father was not going to permit that we travel through this world in darkness, so through the prophets the Lord created the scriptures, just as the Brother of Jared created the stones. The Lord has touched these scriptures so that they might provide light and guidance for us in this life.
+
+## Conclusion
+One of my favorite quotes was given by the Dutch poet, Jan Luyken. "One book printed in the heart's own wax is worth a thousand in the stacks." Let us have the scriptures printed in our hearts and not be books left on our shelves.
 
 ---
 
@@ -34,9 +39,11 @@ In the scriptures we, or more specifically our bodies, are referred to as vessel
 2. [Ether 2:22](https://www.churchofjesuschrist.org/study/scriptures/bofm/ether/2.22)
 3. [Ether 6:3](https://www.churchofjesuschrist.org/study/scriptures/bofm/ether/6.3)
 4. [1 Thessalonians 4:4](https://www.churchofjesuschrist.org/study/scriptures/nt/1-thes/4.4)
+5. [Lucas 4:1-12](https://www.churchofjesuschrist.org/study/scriptures/nt/luke/4.1-12)
+6. [Lucas 2:52](https://www.churchofjesuschrist.org/study/scriptures/nt/luke/2.52)
+7. > "Our knowledge of Jewish life in that age justifies the inference that the Boy was well taught in the law and the scriptures, for such was the rule. He garnered knowledge by study, and gained wisdom by prayer, thought, and effort. Beyond question He was trained to labor, for idleness was abhorred then as it is now; and every Jewish boy, whether carpenter’s son, peasant’s child, or rabbi’s heir, was required to learn and follow a practical and productive vocation. Jesus was all that a boy should be, for His development was unretarded by the dragging weight of sin; He loved and obeyed the truth and therefore was free...Plainly this Son of the Highest was not endowed with a fulness of knowledge, nor with the complete investiture of wisdom, from the cradle." - James E. Talmage, *Jesus the Christ*, chap. 9
 
-
-The picture of the scholar writing scriptures and the sriptures logo was taken from the [July 2015 Friend magazine][friend].
+The picture of the scholar writing scriptures and the scriptures logo were taken from the [July 2015 Friend magazine][friend].
 
 [jerome]: ./jerome.jpg
 [friend]: https://media.ldscdn.org/pdf/magazines/friend-july-2015/2015-07-00-friend-eng.pdf
