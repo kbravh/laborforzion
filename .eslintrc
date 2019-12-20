@@ -1,0 +1,6 @@
+{
+    "rules": {
+        "click-events-have-key-events" : 0,
+        "no-static-element-interactions" : 0
+    }
+}
