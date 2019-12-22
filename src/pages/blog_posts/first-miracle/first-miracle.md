@@ -24,7 +24,7 @@ As a symbolic bridge between these two covenants, we can look to the sacrament. 
 
 <!-- Explain how blood represents new covenant and is expansion on old law and customs -->
 
-Luke 22:20 - Likewise also the acup after supper, saying, This cup is the new btestament in my blood, which is shed for you.
+Luke 22:20 - Likewise also the cup after supper, saying, This cup is the new testament in my blood, which is shed for you.
 
 ---
 
