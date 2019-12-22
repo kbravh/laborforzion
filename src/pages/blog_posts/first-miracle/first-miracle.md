@@ -18,9 +18,11 @@ The new law was presented by Christ throughout the New Testament. He taught that
 
 As a symbolic bridge between these two covenants, we can look to the sacrament. Most Christians understand that the bread and wine that Christ shared with his apostles at the last supper represent the sacrifice He would bring to pass. The bread represents His body, and the wine represents His blood. How then does this ordinance that was introduced at the last supper tie back to the Old Testament and the Law of Moses? To understand this link, we must look back to the Old Testament and the Tabernacle of Moses.
 
-## The Tabernacle and The Symbols Therein
+## The Bread of the Presence
 <!-- Explain the tabernacle of Moses, link/embed video of walkthrough of the temple, show shewbread and explain link to Christ -->
+There are many elements of the tabernacle that have rich symbolic meaning that teach of the plan of salvation; these symbols will be explored in a future article. The focus of this article will fall on one of the symbols found in the Holy Place inside of the tabernacle itself. To the right of the entrance inside of the tent lay the table of shewbread, also known as the bread of the presence. On the table rested 12 loaves of bread, representative of the twelve tribes of Israel being in the presence of God. It seems that this shewbread was a predecessor or symbol of the sacrament, with the bread representing Christ's body as it does in the full sacrament ordinance. As Christ will represent mankind before God at judgement day, so does this bread stand in to represent the twelve tribes of Israel. The cakes were unleavened and baked on the Friday before the sabbath - a close parallel to the timing of Christ's great sacrifice. some of the elements that make up the shewbread table are also representative of Christ. Frankincense was placed in the cups on top of the piles of bread. All of the utensils were made of gold. The table was consecrated with oil and myrrh. 
 
+When Christ institutes the sacrament at the last supper, he gives bread <i>and</i> wine. 
 
 <!-- Explain how blood represents new covenant and is expansion on old law and customs -->
 
