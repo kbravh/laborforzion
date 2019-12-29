@@ -17,7 +17,7 @@ export default ({ data }) => {
 	<meta property="og:type" content="article" />
 	<meta property="og:title" content={post.frontmatter.title} />
 	<meta property="og:description" content={post.excerpt} />
-	<meta property="og:image" content="" /> //add banner image to frontmatter
+	<meta property="og:image" content={post.frontmatter.banner.publicURL} />
 
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:site" content="" />
@@ -43,6 +43,9 @@ export const query = graphql`
       excerpt
       frontmatter {
         title
+	banner {
+	  publicURL
+	}
         logoImage {
           publicURL
         }
