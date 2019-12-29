@@ -13,6 +13,15 @@ export default ({ data }) => {
         <title>{post.frontmatter.title}</title>
         <meta name="description" content={post.excerpt} />
         <meta name="author" content="Karey Higuera" />
+	<meta property="og:url" content="" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content={post.frontmatter.title} />
+	<meta property="og:description" content={post.excerpt} />
+	<meta property="og:image" content="" /> //add banner image to frontmatter
+
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:site" content="" />
+	<meta name="twitter:author" content="" />
       </Helmet>
       <div>
         <div className="blog-post-header">
