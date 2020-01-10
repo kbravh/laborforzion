@@ -39,8 +39,8 @@ One of my favorite quotes was given by the Dutch poet, Jan Luyken. "One book pri
 2. [Ether 2:22](https://www.churchofjesuschrist.org/study/scriptures/bofm/ether/2.22)
 3. [Ether 6:3](https://www.churchofjesuschrist.org/study/scriptures/bofm/ether/6.3)
 4. [1 Thessalonians 4:4](https://www.churchofjesuschrist.org/study/scriptures/nt/1-thes/4.4)
-5. [Lucas 4:1-12](https://www.churchofjesuschrist.org/study/scriptures/nt/luke/4.1-12)
-6. [Lucas 2:52](https://www.churchofjesuschrist.org/study/scriptures/nt/luke/2.52)
+5. [Luke 4:1-12](https://www.churchofjesuschrist.org/study/scriptures/nt/luke/4.1-12)
+6. [Luke 2:52](https://www.churchofjesuschrist.org/study/scriptures/nt/luke/2.52)
 7. > "Our knowledge of Jewish life in that age justifies the inference that the Boy was well taught in the law and the scriptures, for such was the rule. He garnered knowledge by study, and gained wisdom by prayer, thought, and effort. Beyond question He was trained to labor, for idleness was abhorred then as it is now; and every Jewish boy, whether carpenter’s son, peasant’s child, or rabbi’s heir, was required to learn and follow a practical and productive vocation. Jesus was all that a boy should be, for His development was unretarded by the dragging weight of sin; He loved and obeyed the truth and therefore was free...Plainly this Son of the Highest was not endowed with a fulness of knowledge, nor with the complete investiture of wisdom, from the cradle." - James E. Talmage, *Jesus the Christ*, chap. 9
 
 The picture of the scholar writing scriptures and the scriptures logo were taken from the [July 2015 Friend magazine][friend].
