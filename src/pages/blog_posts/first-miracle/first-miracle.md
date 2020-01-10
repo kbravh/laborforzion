@@ -4,6 +4,7 @@ title: Christ's First Miracle
 language: en
 path: /first-miracle
 logoImage: ./vase.svg
+banner: ./vase.svg
 ---
 
 ## The Feast at Cana

@@ -4,6 +4,7 @@ title: Jerome and The Scriptures
 language: en
 path: /jerome-and-the-scriptures
 logoImage: ./scriptures.svg
+banner: ./jerome.jpg
 ---
 ## Jerome
 ![Scholar writing scriptures][jerome]
