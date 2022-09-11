@@ -16,12 +16,13 @@ const Home: NextPage = () => {
         />
       </Head>
 
-      <main className="container mx-auto flex flex-col items-center justify-center p-4">
-        <h1 className="text-5xl md:text-[5rem] leading-normal font-extrabold text-gray-700">
+      <main className="container mx-auto flex flex-col items-center p-4 flex-grow">
+        <h1 className="text-5xl md:text-[5rem] leading-normal font-extrabold text-slate-700">
           Labor For Zion
         </h1>
         <p>
-          A collection of notes, talks, and tools centered around gospel topics.
+          {/* A collection of notes, talks, and tools centered around gospel topics. */}
+          A collection of notes centered around gospel topics.
         </p>
       </main>
     </>

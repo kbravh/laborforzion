@@ -8,8 +8,8 @@ const AboutPage: NextPage = () => (
     <Head>
       <title key="title">About - kbravh</title>
     </Head>
-    <main className="container mx-auto flex flex-col items-center justify-center min-h-fit p-4">
-      <h1 className="text-5xl text-center md:text-[5rem] leading-normal font-extrabold text-slate-300">
+    <main className="container mx-auto flex flex-col items-center min-h-fit p-4 flex-grow">
+      <h1 className="text-5xl text-center leading-normal font-extrabold text-slate-700">
         About
       </h1>
       <div className="prose prose-lg prose-slate dark:prose-invert text-center md:text-left">

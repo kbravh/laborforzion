@@ -6,7 +6,7 @@ import { Footer } from '../components/footer';
 
 const MyApp: AppType = ({Component, pageProps}) => {
   return (
-    <div className="min-h-screen flex flex-col items-center">
+    <div className="min-h-screen flex flex-col items-center selection:bg-emerald-900 selection:text-emerald-50">
       <Head>
         <title key="title">kbravh</title>
         <meta

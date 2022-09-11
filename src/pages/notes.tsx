@@ -15,7 +15,7 @@ type Props = {
   posts: PostListing[];
 };
 
-const WritingPage: NextPage<Props> = ({posts}) => {
+const NotesPage: NextPage<Props> = ({posts}) => {
   const size = useWindowSize();
   let columns = 3;
   if (size.width) {
@@ -36,11 +36,11 @@ const WritingPage: NextPage<Props> = ({posts}) => {
       </Head>
       <div className="flex flex-col items-center">
         <div className="max-w-6xl w-full px-8">
-          <h1 className="text-7xl text-slate-300 font-bold font-sans">
+          <h1 className="text-5xl text-slate-700 font-extrabold font-sans">
             Notes
           </h1>
         </div>
-        <main className="flex flex-col items-center mt-8">
+        <main className="flex flex-col items-center mt-8 flex-grow">
           <div className="max-w-5xl sm:mx-20 mx-8">
             <Masonry
               className="gap-4"
@@ -75,7 +75,7 @@ const WritingPage: NextPage<Props> = ({posts}) => {
   );
 };
 
-export default WritingPage;
+export default NotesPage;
 
 export const getStaticProps: GetStaticProps = async () => {
   const posts: PostListing[] = [];

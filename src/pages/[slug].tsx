@@ -30,7 +30,7 @@ const PostPage: NextPage<PostPageProps> = ({
   backlinks,
 }) => {
   return (
-    <main>
+    <main className='flex-grow'>
       <Head>
         <title key="title">{frontmatter.title}</title>
         <meta
