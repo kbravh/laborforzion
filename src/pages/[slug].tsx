@@ -2,6 +2,7 @@ import {accessSync, readFileSync} from 'fs';
 import {GetStaticPaths, GetStaticProps, NextPage} from 'next';
 import Head from 'next/head';
 import rehypeSlug from 'rehype-slug';
+import remarkFootnotes from 'remark-footnotes'
 import {serialize} from 'next-mdx-remote/serialize';
 import path from 'path';
 import {
@@ -97,7 +98,7 @@ export const getStaticProps: GetStaticProps<PostPageProps> = async ({
   const text = addLinks(titleToSlug, source);
   const content = await serialize(text, {
     parseFrontmatter: true,
-    mdxOptions: {rehypePlugins: [rehypeSlug]},
+    mdxOptions: {rehypePlugins: [rehypeSlug], remarkPlugins: [remarkFootnotes]},
   });
   const frontmatter = matter(source).data;
   const parsedFrontmatter = Frontmatter.parse(frontmatter);
