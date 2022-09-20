@@ -21,8 +21,7 @@ const Home: NextPage = () => {
           Labor For Zion
         </h1>
         <p>
-          {/* A collection of notes, talks, and tools centered around gospel topics. */}
-          A collection of notes centered around gospel topics.
+          A collection of notes, talks, and tools centered around gospel topics.
         </p>
       </main>
     </>

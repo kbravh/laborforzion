@@ -15,6 +15,7 @@ import {PostTemplate} from '../templates/PostTemplate';
 import {Frontmatter} from '../validation/mdx';
 import dynamic from 'next/dynamic';
 import matter from 'gray-matter';
+import { ImageProps } from '../components/mdx/Image';
 
 type PostPageProps = {
   source: string;
@@ -52,7 +53,12 @@ const PostPage: NextPage<PostPageProps> = ({
 
 export default PostPage;
 
-const components = {};
+const components = {
+  Image: dynamic<ImageProps>(
+    () => import('../components/mdx/Image').then(mod => mod.Image),
+    {ssr: false}
+  ),
+};
 
 export const getStaticProps: GetStaticProps<PostPageProps> = async ({
   params,

@@ -51,12 +51,12 @@ const NotesPage: NextPage<Props> = ({posts}) => {
                   key={`/${post.slug}`}
                   href={post.slug}
                 >
-                  <article className="relative rounded-lg border border-slate-700 bg-slate-800 px-6 py-5 shadow-sm flex items-center space-x-3 hover:border-emerald-400 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-emerald-500 cursor-pointer select-none">
+                  <article className="relative rounded-lg border border-emerald-800 bg-slate-100 px-6 py-5 shadow-sm flex items-center space-x-3 hover:border-emerald-400 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-emerald-500 cursor-pointer select-none">
                     <div className="flex flex-col">
-                      <h2 className="text-slate-300 text-lg">
+                      <h2 className="text-slate-600 font-semibold text-lg">
                         {post.frontmatter.title}
                       </h2>
-                      <p className="text-slate-400 text-md">
+                      <p className="text-slate-500 text-md">
                         {post.frontmatter.description}
                       </p>
                       {/* TODO - force relative date to re-render on client side */}
