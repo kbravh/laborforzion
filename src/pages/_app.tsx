@@ -2,11 +2,10 @@ import '../styles/globals.css';
 import type {AppType} from 'next/dist/shared/lib/utils';
 import Head from 'next/head';
 import { Header } from '../components/header';
-import { Footer } from '../components/footer';
 
 const MyApp: AppType = ({Component, pageProps}) => {
   return (
-    <div className="min-h-screen flex flex-col items-center selection:bg-emerald-900 selection:text-emerald-50">
+    <div className="min-h-[calc(100vh_-_80px)] flex flex-col items-center selection:bg-emerald-900 selection:text-emerald-50">
       <Head>
         <title key="title">kbravh</title>
         <meta
@@ -22,7 +21,6 @@ const MyApp: AppType = ({Component, pageProps}) => {
       </Head>
       <Header />
       <Component {...pageProps} />
-      <Footer />
     </div>
   );
 };
