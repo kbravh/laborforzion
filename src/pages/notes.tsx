@@ -34,7 +34,7 @@ const NotesPage: NextPage<Props> = ({posts}) => {
       <Head>
         <title key="title">Notes - Labor For Zion</title>
       </Head>
-      <div className="flex flex-col items-center">
+      <div className="flex flex-col items-center flex-grow">
         <div className="max-w-6xl w-full px-8">
           <h1 className="text-5xl text-slate-700 font-extrabold font-sans">
             Notes
