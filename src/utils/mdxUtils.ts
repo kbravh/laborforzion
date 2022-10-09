@@ -49,6 +49,7 @@ export const addLinks = (
 ): string => {
   // Replace embed links with content first
   let embedLinks = getEmbedLinks(source);
+  let firstEmbed = true;
   do {
     for (const {link, title} of embedLinks) {
       const slug = titleToSlug[title];
@@ -57,7 +58,6 @@ export const addLinks = (
       }
       // fetch markdown file content
       let filePath = path.join(NOTES_PATH, `${slug}.md`);
-
       // We'll try to access the filepath we created.
       // If we can't, it's probably an mdx file.
       if (filePath) {
@@ -70,13 +70,20 @@ export const addLinks = (
       let embed = readFileSync(filePath, 'utf-8');
       // remove frontmatter
       embed = embed.replace(/^---.*---\n/gs, '');
-      // TODO - we should provide a link to the actual embedded page
+      if (firstEmbed) {
+        // provide an indication that this is an embed and provide a link to the original note
+        embed =
+          `\n\n---\n\n` +
+          embed +
+          `\n\n<span className="text-sm">From note <HoverUnderline><Link href="/${slug}">${title}</Link></HoverUnderline></span>\n\n---\n\n`;
+      }
       source = source.replace(link, embed);
-
+      firstEmbed = false;
       // look for new embed links in the embeds we just created
       embedLinks = getEmbedLinks(source);
     }
-  } while (embedLinks.length)
+  } while (embedLinks.length);
+
   const bracketLinks = getOutgoingLinks(source);
   for (const {link, title, alias} of bracketLinks) {
     const slug = titleToSlug[title];

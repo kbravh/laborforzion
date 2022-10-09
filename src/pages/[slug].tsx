@@ -2,7 +2,7 @@ import {accessSync, readFileSync} from 'fs';
 import {GetStaticPaths, GetStaticProps, NextPage} from 'next';
 import Head from 'next/head';
 import rehypeSlug from 'rehype-slug';
-import remarkFootnotes from 'remark-footnotes'
+import remarkFootnotes from 'remark-footnotes';
 import {serialize} from 'next-mdx-remote/serialize';
 import path from 'path';
 import {
@@ -16,7 +16,8 @@ import {PostTemplate} from '../templates/PostTemplate';
 import {Frontmatter} from '../validation/mdx';
 import dynamic from 'next/dynamic';
 import matter from 'gray-matter';
-import { ImageProps } from '../components/mdx/Image';
+import {ImageProps} from '../components/mdx/Image';
+import {HoverUnderlineProps} from '../components/links';
 
 type PostPageProps = {
   source: string;
@@ -32,7 +33,7 @@ const PostPage: NextPage<PostPageProps> = ({
   backlinks,
 }) => {
   return (
-    <main className='flex-grow'>
+    <main className="flex-grow">
       <Head>
         <title key="title">{frontmatter.title}</title>
         <meta
@@ -55,10 +56,14 @@ const PostPage: NextPage<PostPageProps> = ({
 export default PostPage;
 
 const components = {
+  HoverUnderline: dynamic<HoverUnderlineProps>(() =>
+    import('../components/links').then(mod => mod.HoverUnderline)
+  ),
   Image: dynamic<ImageProps>(
     () => import('../components/mdx/Image').then(mod => mod.Image),
     {ssr: false}
   ),
+  Link: dynamic(() => import('next/link')),
 };
 
 export const getStaticProps: GetStaticProps<PostPageProps> = async ({
