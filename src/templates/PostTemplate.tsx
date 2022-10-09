@@ -43,15 +43,17 @@ const Metadata = ({frontmatter}: Pick<PostProps, 'frontmatter'>) => {
 const Backlinks = ({backlinks}: Pick<PostProps, 'backlinks'>): JSX.Element => (
   <div>
     <h2>Pages that reference this note</h2>
-    <ul className="list-none flex flex-col gap-2">
+    <ul className="flex flex-col gap-2">
       {backlinks.map(({title, slug}) => (
-        <article key={slug}>
-          <HoverUnderline>
-            <Link href={`/${slug}`}>
-              <span className="text-slate-300 text-lg">{title}</span>
-            </Link>
-          </HoverUnderline>
-        </article>
+        <li key={slug}>
+          <article>
+            <HoverUnderline>
+              <Link href={`/${slug}`}>
+                <span className="text-lg">{title}</span>
+              </Link>
+            </HoverUnderline>
+          </article>
+        </li>
       ))}
     </ul>
   </div>
