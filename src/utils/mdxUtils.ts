@@ -90,11 +90,10 @@ export const addLinks = (
     if (!slug) {
       // ? - create a placeholder page for linked, non-existent pages?
       console.warn(`No slug found for ${link}`);
-      continue;
     }
     source = source.replace(
       link,
-      `<Link href="/${slug}">${alias ?? title}</Link>`
+      slug ? `<Link href="/${slug}">${alias ?? title}</Link>` : alias ?? title
     );
   }
   return source;
