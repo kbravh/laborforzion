@@ -102,7 +102,7 @@ export const addLinks = (
 
 /**
  * Searches md[x] text for any double-bracket links and returns
- * the link with brackets, its text, and its alias if it exists.
+ * the link with brackets, its text, its alias, and an excerpt if it exists.
  * Takes a regex pattern to use to find bracket link matches. Returns
  * a new function that takes the mdx source.
  */
@@ -111,30 +111,35 @@ const getBracketLinks =
   (source: string): BracketLink[] => {
     const links: BracketLink[] = [];
     const outgoingLinks = [...source.matchAll(pattern)];
-    for (const link of outgoingLinks) {
-      if (!link[0]) {
+    for (const outgoingLink of outgoingLinks) {
+      if (!outgoingLink[0]) {
         console.error('A match was not found in the outgoing link result.');
         continue;
       }
-      // if we found a match, we should have a capturing group
-      // but we have to keep typescript happy and ensure it's defined
-      const text = link[1];
-      if (!text) {
+      // if we found a match, we should have capturing groups
+      // but we have to keep typescript happy and ensure they're defined
+      const [excerpt, link, text] = outgoingLink;
+      if (!link || !text) {
         continue;
       }
       const [title = '', alias] = text?.split('|');
-      links.push({link: link[0], title, alias});
+      links.push({link, title, alias, excerpt: excerpt.trim()});
     }
     return links;
   };
 
-export const getOutgoingLinks = getBracketLinks(/\[\[([-\w\s_|]+)\]\]/g);
-export const getEmbedLinks = getBracketLinks(/!\[\[([-\w\s_|]+)\]\]/g);
+export const getOutgoingLinks = getBracketLinks(
+  /(?:\w+\W){0,10}(\[\[([-\w\s_|]+)\]\])(?:\W?\w+\W){0,10}/g
+);
+export const getEmbedLinks = getBracketLinks(
+  /(?:\w+\W){0,10}(!\[\[([-\w\s_|]+)\]\])(?:\W?\w+\W){0,10}/g
+);
 
-const titlesWithBacklinks: Record<string, {title: string; slug: string}[]> = {};
+export type Backlink = {title: string; slug: string; excerpt: string | null};
+
+const titlesWithBacklinks: Record<string, Backlink[]> = {};
 /**
  * Provides a map of titles and aliases to all backlinks from other files.
- * TODO - include an excerpt of where the title is mentioned.
  */
 export const getBacklinks = (): typeof titlesWithBacklinks => {
   const map: typeof titlesWithBacklinks = {};
@@ -150,8 +155,11 @@ export const getBacklinks = (): typeof titlesWithBacklinks => {
     }
     // this will catch embed links too
     const links = getOutgoingLinks(source);
-    for (const {title: reference} of links) {
-      map[reference] = [...(map[reference] ?? []), {slug, title}];
+    for (const {title: reference, excerpt, link} of links) {
+      map[reference] = [
+        ...(map[reference] ?? []),
+        {slug, title, excerpt: excerpt === link ? null : excerpt},
+      ];
     }
   }
 

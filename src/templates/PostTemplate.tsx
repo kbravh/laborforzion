@@ -44,13 +44,14 @@ const Backlinks = ({backlinks}: Pick<PostProps, 'backlinks'>): JSX.Element => (
   <div>
     <h2>Pages that reference this note</h2>
     <ul className="flex flex-col gap-2">
-      {backlinks.map(({title, slug}) => (
+      {backlinks.map(({title, slug, excerpt}) => (
         <li key={slug}>
           <article>
             <HoverUnderline>
               <Link href={`/${slug}`}>
                 <span className="text-lg">{title}</span>
               </Link>
+              {excerpt ? `"...${excerpt}..."` : ''}
             </HoverUnderline>
           </article>
         </li>

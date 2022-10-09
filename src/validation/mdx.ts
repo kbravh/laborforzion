@@ -14,6 +14,7 @@ export const BracketLink = z.object({
   link: z.string(),
   title: z.string(),
   alias: z.string().optional(),
+  excerpt: z.string()
 });
 
 export type BracketLink = z.infer<typeof BracketLink>;

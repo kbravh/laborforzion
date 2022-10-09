@@ -1,12 +1,13 @@
 import type {Frontmatter} from '../../validation/mdx';
 import {MDXRemoteProps} from 'next-mdx-remote';
+import {Backlink} from '../../utils/mdxUtils';
 
 export type PostProps = {
   source: string;
   frontmatter: Frontmatter;
   slug: string;
   components: MDXRemoteProps['components'];
-  backlinks: {title: string, slug: string}[]
+  backlinks: Backlink[];
 };
 export type PostListing = {
   slug: string;

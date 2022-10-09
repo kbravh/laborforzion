@@ -11,6 +11,7 @@ import {
   addLinks,
   getTitleToSlugMap,
   getBacklinks,
+  Backlink,
 } from '../utils/mdxUtils';
 import {PostTemplate} from '../templates/PostTemplate';
 import {Frontmatter} from '../validation/mdx';
@@ -23,7 +24,7 @@ type PostPageProps = {
   source: string;
   frontmatter: Frontmatter;
   slug: string;
-  backlinks: {title: string; slug: string}[];
+  backlinks: Backlink[];
 };
 
 const PostPage: NextPage<PostPageProps> = ({
