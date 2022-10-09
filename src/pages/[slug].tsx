@@ -87,10 +87,6 @@ export const getStaticProps: GetStaticProps<PostPageProps> = async ({
     }
   }
 
-  if (!filePath) {
-    throw new Error(`Path for the slug ${slug} couldn\'t be determined`);
-  }
-
   const titleToSlug = getTitleToSlugMap();
   const titlesWithBacklinks = getBacklinks();
 
