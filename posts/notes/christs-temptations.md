@@ -5,7 +5,7 @@ date: 2022-10-30T21:48:07.541Z
 language: en_US
 ---
 
-In [[Matthew 4.1-11]], Christ fasts for forty days and forty nights. After his fast, He is tempted by Satan.
+In [Matthew 4:1-11](https://www.churchofjesuschrist.org/study/scriptures/nt/matt/4?id=p1-p11#p1), Christ fasts for forty days and forty nights. After his fast, He is tempted by Satan.
 
 Satan is a master of temptation; he knows that for a temptation to be effective, it must entice the person with something that they want. He is also the master of lies, and promises to immediately give a prize that would otherwise require patience and sacrifice.
 
