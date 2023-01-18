@@ -85,6 +85,7 @@ export const addLinks = (
   } while (embedLinks.length);
 
   const bracketLinks = getOutgoingLinks(source);
+
   for (const {link, title, alias} of bracketLinks) {
     const slug = titleToSlug[title];
     if (!slug) {
@@ -128,10 +129,10 @@ const getBracketLinks =
   };
 
 export const getOutgoingLinks = getBracketLinks(
-  /(?:\w+\W){0,10}(\[\[([-\w\s_|]+)\]\])(?:\W?\w+\W){0,10}/g
+  /(?:\w+\W){0,10}(\[\[([-\w\s\d\.:_|]+)\]\])(?:\W?\w+\W){0,10}/g
 );
 export const getEmbedLinks = getBracketLinks(
-  /(?:\w+\W){0,10}(!\[\[([-\w\s_|]+)\]\])(?:\W?\w+\W){0,10}/g
+  /(?:\w+\W){0,10}(!\[\[([-\w\s\d\.:_|]+)\]\])(?:\W?\w+\W){0,10}/g
 );
 
 export type Backlink = {title: string; slug: string; excerpt: string | null};
