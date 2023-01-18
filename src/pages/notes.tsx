@@ -35,12 +35,12 @@ const NotesPage: NextPage<Props> = ({posts}) => {
         <title key="title">Notes - Labor For Zion</title>
       </Head>
       <div className="flex flex-col items-center flex-grow">
-        <div className="max-w-6xl w-full px-8">
+        <div className="max-w-5xl w-full px-8">
           <h1 className="text-5xl text-slate-700 font-extrabold font-sans">
             Notes
           </h1>
         </div>
-        <main className="flex flex-col items-center mt-8 flex-grow">
+        <main className="flex flex-col items-center mt-8 flex-grow max-w-5xl">
           <div className="max-w-5xl sm:mx-20 mx-8">
             <Masonry
               className="gap-4"
