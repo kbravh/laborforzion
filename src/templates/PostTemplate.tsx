@@ -10,7 +10,7 @@ export const PostTemplate = ({
   backlinks,
 }: PostProps) => {
   return (
-    <article className="prose prose-lg prose-slate dark:prose-invert grid grid-cols-[1fr_min(80ch,_100%)_1fr] [&>*]:col-start-2 min-w-full prose-h1:text-4xl prose-h1:sm:text-5xl prose-h1:md:text-7xl px-4">
+    <article className="prose prose-lg prose-slate dark:prose-invert [&>*]:col-start-2 min-w-full prose-h1:text-4xl prose-h1:sm:text-5xl prose-h1:md:text-7xl px-4">
       <Title frontmatter={frontmatter} />
       <Metadata frontmatter={frontmatter} />
       <MDXRemote
