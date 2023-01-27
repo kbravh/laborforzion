@@ -3,7 +3,7 @@ import path from 'path';
 import {BracketLink, Frontmatter} from '../validation/mdx';
 import matter from 'gray-matter';
 
-export const NOTES_PATH = path.join(process.cwd(), 'posts', 'notes');
+export const NOTES_PATH = path.join(process.cwd(), 'posts');
 
 const isMdxFile = (path: string): boolean => /\.mdx?$/.test(path);
 
