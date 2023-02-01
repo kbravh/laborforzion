@@ -19,11 +19,8 @@ type Props = {
 
 const NotesPage: NextPage<Props> = ({posts}) => {
   const size = useWindowSize();
-  let columns = 3;
+  let columns = 2;
   if (size.width) {
-    if (size.width <= 1024) {
-      columns = 2;
-    }
     if (size.width <= 640) {
       columns = 1;
     }
