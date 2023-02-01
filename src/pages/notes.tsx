@@ -3,12 +3,14 @@ import {GetStaticProps, NextPage} from 'next';
 import {serialize} from 'next-mdx-remote/serialize';
 import Head from 'next/head';
 import Link from 'next/link';
-import path from 'path';
 import {Masonry} from '../components/masonry';
 import {useWindowSize} from '../hooks/useWindowSize';
 import {PostListing} from '../templates/models/Post';
 import {relativeDate} from '../utils/date';
-import {notePaths, NOTES_PATH, removeMdxExtension} from '../utils/mdxUtils';
+import {
+  getSlugFromFilepath,
+  notePaths,
+} from '../utils/mdxUtils';
 import {Frontmatter} from '../validation/mdx';
 
 type Props = {
@@ -82,11 +84,11 @@ export const getStaticProps: GetStaticProps = async () => {
 
   // Loop through all articles and extract slug and frontmatter
   for (const articlePath of notePaths) {
-    const source = readFileSync(path.join(NOTES_PATH, articlePath), 'utf-8');
+    const source = readFileSync(articlePath, 'utf-8');
     const content = await serialize(source, {parseFrontmatter: true});
     posts.push({
       frontmatter: Frontmatter.parse(content.frontmatter),
-      slug: removeMdxExtension(articlePath),
+      slug: getSlugFromFilepath(articlePath),
     });
   }
 

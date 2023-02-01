@@ -1,14 +1,30 @@
-import {accessSync, readdirSync, readFileSync} from 'fs';
-import path from 'path';
+import {accessSync, readdirSync, readFileSync, statSync} from 'fs';
+import path, {basename} from 'path';
 import {BracketLink, Frontmatter} from '../validation/mdx';
 import matter from 'gray-matter';
+import { string } from 'zod';
 
 export const NOTES_PATH = path.join(process.cwd(), 'posts');
 
-const isMdxFile = (path: string): boolean => /\.mdx?$/.test(path);
-
 export const removeMdxExtension = (path: string) => path.replace(/\.mdx?$/, '');
-export const notePaths = readdirSync(NOTES_PATH).filter(isMdxFile);
+// export const notePaths = readdirSync(NOTES_PATH).filter(isMdxFile);
+
+const walkPath = (dir: string): string[] => {
+  const files = readdirSync(dir);
+  return files.flatMap(file => {
+    const filepath = path.join(dir, file);
+    const stats = statSync(filepath);
+    if (stats.isDirectory()) {
+      return walkPath(filepath);
+    } else {
+      return [filepath];
+    }
+  });
+};
+
+export const getSlugFromFilepath = (path: string): string =>
+  removeMdxExtension(basename(path));
+export const notePaths = walkPath(NOTES_PATH);
 
 let titleToSlug: Record<string, string>;
 /**
@@ -24,16 +40,38 @@ export const getTitleToSlugMap = (): Record<string, string> => {
   const map: Record<string, string> = {};
   // this creates a map of all titles and aliases to their corresponding slug
   for (const article of notePaths) {
-    const source = readFileSync(path.join(NOTES_PATH, article), 'utf-8');
+    const source = readFileSync(article, 'utf-8');
     const frontmatter = Frontmatter.parse(matter(source).data);
-    map[frontmatter.title] = removeMdxExtension(article);
+    map[frontmatter.title] = getSlugFromFilepath(article);
     frontmatter.aliases?.forEach(alias => {
-      map[alias] = removeMdxExtension(article);
+      map[alias] = getSlugFromFilepath(article);
     });
   }
   titleToSlug = map;
   return titleToSlug;
 };
+
+let slugToPath: Record<string, string>;
+/**
+ * Creates a map of slugs to their respective filepaths. This is necessary to
+ * support nested filepaths.
+ */
+export const getSlugToPathMap = (): Record<string, string> => {
+  if (slugToPath) {
+    return slugToPath
+  }
+
+  let map: Record<string, string> = {}
+
+  map = notePaths.reduce((accumulator, path) => {
+    const slug = getSlugFromFilepath(path)
+    accumulator[slug] = path
+    return accumulator
+  }, map)
+
+  slugToPath = map
+  return slugToPath
+}
 
 /**
  * Takes a fresh Md[x] file, checks for double-bracket links, and
@@ -146,7 +184,7 @@ export const getBacklinks = (): typeof titlesWithBacklinks => {
   const titleToSlug = getTitleToSlugMap();
 
   for (const articlePath of notePaths) {
-    const source = readFileSync(path.join(NOTES_PATH, articlePath), 'utf-8');
+    const source = readFileSync(articlePath, 'utf-8');
     const frontmatter = Frontmatter.parse(matter(source).data);
     const title = frontmatter.title;
     const slug = titleToSlug[title];

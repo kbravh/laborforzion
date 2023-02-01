@@ -4,7 +4,7 @@ import Head from 'next/head';
 import rehypeSlug from 'rehype-slug';
 import remarkFootnotes from 'remark-footnotes';
 import {serialize} from 'next-mdx-remote/serialize';
-import path from 'path';
+import path, {basename} from 'path';
 import {
   NOTES_PATH,
   notePaths,
@@ -12,6 +12,9 @@ import {
   getTitleToSlugMap,
   getBacklinks,
   Backlink,
+  removeMdxExtension,
+  getSlugFromFilepath,
+  getSlugToPathMap,
 } from '../utils/mdxUtils';
 import {PostTemplate} from '../templates/PostTemplate';
 import {Frontmatter} from '../validation/mdx';
@@ -81,16 +84,11 @@ export const getStaticProps: GetStaticProps<PostPageProps> = async ({
     );
   }
 
-  let filePath = path.join(NOTES_PATH, `${slug}.md`);
+  const slugToPathMap = getSlugToPathMap();
+  const filePath = slugToPathMap[slug];
 
-  // We'll try to access the filepath we created.
-  // If we can't, it's probably an mdx file.
-  if (filePath) {
-    try {
-      accessSync(filePath);
-    } catch (_) {
-      filePath += 'x';
-    }
+  if (!filePath) {
+    throw new Error(`Filepath not found for the slug ${slug}!`);
   }
 
   const titleToSlug = getTitleToSlugMap();
@@ -124,10 +122,7 @@ export const getStaticProps: GetStaticProps<PostPageProps> = async ({
 export const getStaticPaths: GetStaticPaths = async () => {
   // Get slugs for all file paths passed in
   const getSlugParams = (filePaths: string[]) =>
-    filePaths
-      // Remove the .mdx extension
-      .map(path => path.replace(/\.mdx?$/, ''))
-      .map(slug => ({params: {slug}}));
+    filePaths.map(getSlugFromFilepath).map(slug => ({params: {slug}}));
 
   const paths = [...getSlugParams(notePaths)];
 
