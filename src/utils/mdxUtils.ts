@@ -88,6 +88,7 @@ export const addLinks = (
   // Replace embed links with content first
   let embedLinks = getEmbedLinks(source);
   let firstEmbed = true;
+  const slugToPathMap = getSlugToPathMap()
   do {
     for (const {link, title} of embedLinks) {
       const slug = titleToSlug[title];
@@ -95,15 +96,9 @@ export const addLinks = (
         throw new Error(`Slug not found for embed of ${title}!`);
       }
       // fetch markdown file content
-      let filePath = path.join(NOTES_PATH, `${slug}.md`);
-      // We'll try to access the filepath we created.
-      // If we can't, it's probably an mdx file.
-      if (filePath) {
-        try {
-          accessSync(filePath);
-        } catch (_) {
-          filePath += 'x';
-        }
+      const filePath = slugToPathMap[slug];
+      if (! filePath) {
+        throw new Error(`File path not found for the slug ${slug}`)
       }
       let embed = readFileSync(filePath, 'utf-8');
       // remove frontmatter
