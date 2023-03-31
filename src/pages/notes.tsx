@@ -3,29 +3,17 @@ import {GetStaticProps, NextPage} from 'next';
 import {serialize} from 'next-mdx-remote/serialize';
 import Head from 'next/head';
 import Link from 'next/link';
-import {Masonry} from '../components/masonry';
-import {useWindowSize} from '../hooks/useWindowSize';
 import {PostListing} from '../templates/models/Post';
 import {relativeDate} from '../utils/date';
-import {
-  getSlugFromFilepath,
-  notePaths,
-} from '../utils/mdxUtils';
+import {getSlugFromFilepath, notePaths} from '../utils/mdxUtils';
 import {Frontmatter} from '../validation/mdx';
+import clsx from 'clsx';
 
 type Props = {
   posts: PostListing[];
 };
 
 const NotesPage: NextPage<Props> = ({posts}) => {
-  const size = useWindowSize();
-  let columns = 2;
-  if (size.width) {
-    if (size.width <= 640) {
-      columns = 1;
-    }
-  }
-
   const today = new Date();
 
   return (
@@ -40,33 +28,34 @@ const NotesPage: NextPage<Props> = ({posts}) => {
           </h1>
         </div>
         <main className="flex flex-col items-center mt-8 flex-grow max-w-5xl">
-          <div className="max-w-5xl sm:mx-20 mx-8">
-            <Masonry
-              className="gap-4"
-              columns={columns}
-              items={posts}
-              renderItem={post => (
-                <Link
-                  key={`/${post.slug}`}
-                  href={post.slug}
+          <div className="max-w-5xl sm:mx-20 mx-8 grid grid-cols-2 gap-4">
+            {posts.map(post => (
+              <Link
+                key={`/${post.slug}`}
+                href={post.slug}
+              >
+                <article
+                  className={clsx(
+                    'rounded-lg border border-emerald-100 shadow-sm shadow-emerald-800 bg-slate-100',
+                    'relative px-6 py-5 flex flex-col justify-between space-y-3',
+                    'hover:border-emerald-400 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-emerald-500',
+                    'cursor-pointer select-none'
+                  )}
                 >
-                  <article className="relative rounded-lg border border-emerald-100 shadow-sm shadow-emerald-800 bg-slate-100 px-6 py-5 flex items-center space-x-3 hover:border-emerald-400 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-emerald-500 cursor-pointer select-none">
-                    <div className="flex flex-col">
-                      <h2 className="text-slate-600 font-semibold text-lg">
-                        {post.frontmatter.title}
-                      </h2>
-                      <p className="text-slate-500 text-md">
-                        {post.frontmatter.description}
-                      </p>
-                      {/* TODO - force relative date to re-render on client side */}
-                      <span className="text-slate-500 self-end mt-2">
-                        {relativeDate(today, new Date(post.frontmatter.date))}
-                      </span>
-                    </div>
-                  </article>
-                </Link>
-              )}
-            />
+                  <div>
+                    <h2 className="text-slate-600 font-semibold text-lg">
+                      {post.frontmatter.title}
+                    </h2>
+                    <p className="text-slate-500 text-md">
+                      {post.frontmatter.description}
+                    </p>
+                  </div>
+                  <span className="text-slate-500 self-end mt-2">
+                    {relativeDate(today, new Date(post.frontmatter.date))}
+                  </span>
+                </article>
+              </Link>
+            ))}
           </div>
         </main>
       </div>
