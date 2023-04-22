@@ -8,7 +8,7 @@ language: en_US
 
 ## Christ as the Good Samaritan
 
-This parable can be interpreted to be a symbol of Christ. The Samaritans were looked down on by the Jews of the time, just as they looked down on Christ. Just as the samaritan takes care of the wounded man on the path, Christ takes care of of us along our mortal path and heals our wounds. This relation can be further established as the samaritan puts oil and wine on the traveller's wounds in [[Luke 10.34]], an example of using [[Wine and olive oil as symbols of the blood of Christ|Christ's First Miracle]] to heal spiritual wounds.
+This parable can be interpreted to be a symbol of Christ. The Samaritans were looked down on by the Jews of the time, just as they looked down on Christ. Just as the samaritan takes care of the wounded man on the path, Christ takes care of of us along our mortal path and heals our wounds. This relation can be further established as the samaritan puts oil and wine on the traveller's wounds in [[Luke 10.34]], an example of using [[Christ's First Miracle|Wine and olive oil as symbols of the blood of Christ]] to heal spiritual wounds.
 
 ## The Innkeeper
 
