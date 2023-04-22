@@ -28,7 +28,7 @@ const NotesPage: NextPage<Props> = ({posts}) => {
           </h1>
         </div>
         <main className="flex flex-col items-center mt-8 flex-grow max-w-5xl">
-          <div className="max-w-5xl sm:mx-20 mx-8 grid grid-cols-2 gap-4">
+          <div className="max-w-2xl sm:mx-20 mx-8 flex flex-col gap-4">
             {posts.map(post => (
               <Link
                 key={`/${post.slug}`}
