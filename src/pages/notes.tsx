@@ -23,7 +23,7 @@ const NotesPage: NextPage<Props> = ({posts}) => {
       </Head>
       <div className="flex flex-col items-center flex-grow">
         <div className="max-w-5xl w-full px-8">
-          <h1 className="text-5xl text-slate-700 font-extrabold font-sans">
+          <h1 className="text-5xl text-slate-800 font-extrabold font-sans">
             Notes
           </h1>
         </div>
@@ -43,14 +43,14 @@ const NotesPage: NextPage<Props> = ({posts}) => {
                   )}
                 >
                   <div>
-                    <h2 className="text-slate-600 font-semibold text-lg">
+                    <h2 className="text-slate-700 font-semibold text-lg">
                       {post.frontmatter.title}
                     </h2>
-                    <p className="text-slate-500 text-md">
+                    <p className="text-slate-700 text-md">
                       {post.frontmatter.description}
                     </p>
                   </div>
-                  <span className="text-slate-500 self-end mt-2">
+                  <span className="text-slate-600 self-end mt-2">
                     {relativeDate(today, new Date(post.frontmatter.date))}
                   </span>
                 </article>
