@@ -1,13 +1,12 @@
-import {accessSync, readdirSync, readFileSync, statSync} from 'fs';
+import {readdirSync, readFileSync, statSync} from 'fs';
 import path, {basename} from 'path';
 import {BracketLink, Frontmatter} from '../validation/mdx';
 import matter from 'gray-matter';
-import { string } from 'zod';
+import slugify from 'slugify';
 
 export const NOTES_PATH = path.join(process.cwd(), 'posts');
 
 export const removeMdxExtension = (path: string) => path.replace(/\.mdx?$/, '');
-// export const notePaths = readdirSync(NOTES_PATH).filter(isMdxFile);
 
 const walkPath = (dir: string): string[] => {
   const files = readdirSync(dir);
@@ -24,6 +23,9 @@ const walkPath = (dir: string): string[] => {
 
 export const getSlugFromFilepath = (path: string): string =>
   removeMdxExtension(basename(path));
+
+export const getSlugFromTitle = (title: string): string =>
+  slugify(title, {lower: true});
 export const notePaths = walkPath(NOTES_PATH);
 
 let titleToSlug: Record<string, string>;
@@ -58,20 +60,20 @@ let slugToPath: Record<string, string>;
  */
 export const getSlugToPathMap = (): Record<string, string> => {
   if (slugToPath) {
-    return slugToPath
+    return slugToPath;
   }
 
-  let map: Record<string, string> = {}
+  let map: Record<string, string> = {};
 
   map = notePaths.reduce((accumulator, path) => {
-    const slug = getSlugFromFilepath(path)
-    accumulator[slug] = path
-    return accumulator
-  }, map)
+    const slug = getSlugFromFilepath(path);
+    accumulator[slug] = path;
+    return accumulator;
+  }, map);
 
-  slugToPath = map
-  return slugToPath
-}
+  slugToPath = map;
+  return slugToPath;
+};
 
 /**
  * Takes a fresh Md[x] file, checks for double-bracket links, and
@@ -88,7 +90,7 @@ export const addLinks = (
   // Replace embed links with content first
   let embedLinks = getEmbedLinks(source);
   let firstEmbed = true;
-  const slugToPathMap = getSlugToPathMap()
+  const slugToPathMap = getSlugToPathMap();
   do {
     for (const {link, title} of embedLinks) {
       const slug = titleToSlug[title];
@@ -97,8 +99,8 @@ export const addLinks = (
       }
       // fetch markdown file content
       const filePath = slugToPathMap[slug];
-      if (! filePath) {
-        throw new Error(`File path not found for the slug ${slug}`)
+      if (!filePath) {
+        throw new Error(`File path not found for the slug ${slug}`);
       }
       let embed = readFileSync(filePath, 'utf-8');
       // remove frontmatter
@@ -162,10 +164,10 @@ const getBracketLinks =
   };
 
 export const getOutgoingLinks = getBracketLinks(
-  /(?:\w+\W){0,10}(\[\[([-\w\s\d\.:_|]+)\]\])(?:\W?\w+\W){0,10}/g
+  /(?:\w+\W){0,10}(\[\[([^\[\]]+)\]\])(?:\W?\w+\W){0,10}/g
 );
 export const getEmbedLinks = getBracketLinks(
-  /(?:\w+\W){0,10}(!\[\[([-\w\s\d\.:_|]+)\]\])(?:\W?\w+\W){0,10}/g
+  /(?:\w+\W){0,10}(!\[\[([^\[\]]+)\]\])(?:\W?\w+\W){0,10}/g
 );
 
 export type Backlink = {title: string; slug: string; excerpt: string | null};
