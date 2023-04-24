@@ -34,6 +34,7 @@ let titleToSlug: Record<string, string>;
  * Also includes frontmatter aliases for lookup. For example,
  * if the page "Interactive Teaching" has an alias of
  * "Interactive Teaching MOC", the slug can be found through either.
+ * Includes links that are mentioned but don't exist yet.
  */
 export const getTitleToSlugMap = (): Record<string, string> => {
   if (titleToSlug) {
@@ -48,7 +49,15 @@ export const getTitleToSlugMap = (): Record<string, string> => {
     frontmatter.aliases?.forEach(alias => {
       map[alias] = getSlugFromFilepath(article);
     });
+    // check all backlinks to create slugs for pages that don't exist yet
+    const bracketLinks = getOutgoingLinks(source);
+    for (const {title} of bracketLinks) {
+      if (!map[title]) {
+        map[title] = getSlugFromTitle(title);
+      }
+    }
   }
+
   titleToSlug = map;
   return titleToSlug;
 };
@@ -184,10 +193,8 @@ export const getBacklinks = (): typeof titlesWithBacklinks => {
     const source = readFileSync(articlePath, 'utf-8');
     const frontmatter = Frontmatter.parse(matter(source).data);
     const title = frontmatter.title;
-    const slug = titleToSlug[title];
-    if (!slug) {
-      throw new Error(`A slug was not found for ${title}`);
-    }
+    // default to title if there isn't a slug (empty pages)
+    const slug = titleToSlug[title] ?? slugify(title);
     // this will catch embed links too
     const links = getOutgoingLinks(source);
     for (const {title: reference, excerpt, link} of links) {
