@@ -9,6 +9,12 @@ export type PostProps = {
   components: MDXRemoteProps['components'];
   backlinks: Backlink[];
 };
+export type EmptyPostProps = {
+  slug: string;
+  components: MDXRemoteProps['components'];
+  backlinks: Backlink[];
+  title: string;
+};
 export type PostListing = {
   slug: string;
   frontmatter: Frontmatter;

@@ -11,9 +11,13 @@ export const Frontmatter = z.object({
 export type Frontmatter = z.infer<typeof Frontmatter>;
 
 export const BracketLink = z.object({
+  // the raw text, including double brackets
   link: z.string(),
+  // the title without brackets, not including alias
   title: z.string(),
+  // just the alias, if present
   alias: z.string().optional(),
+  // an excerpt of text surrounding the link
   excerpt: z.string()
 });
 
