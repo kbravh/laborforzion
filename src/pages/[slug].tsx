@@ -162,11 +162,10 @@ export const getStaticProps: GetStaticProps<PostPageProps> = async ({
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  // Get slugs for all file paths passed in
-  const getSlugParams = (filePaths: string[]) =>
-    filePaths.map(getSlugFromFilepath).map(slug => ({params: {slug}}));
+  const {slugToTitle} = getTitleAndSlugMaps();
 
-  const paths = [...getSlugParams(notePaths)];
+  // Generate paths based on all of our slugs
+  const paths = [...Object.keys(slugToTitle).map(slug => ({params: {slug}}))]
 
   return {
     paths,

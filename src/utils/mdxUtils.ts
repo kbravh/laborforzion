@@ -28,6 +28,7 @@ export const getSlugFromTitle = (title: string): string =>
   slugify(title, {lower: true});
 export const notePaths = walkPath(NOTES_PATH);
 
+//TODO - experiment with replacing these with Maps
 let titleToSlug: Record<string, string>;
 let slugToTitle: Record<string, string>;
 /**
@@ -189,7 +190,7 @@ export const getEmbedLinks = getBracketLinks(
 
 export type Backlink = {title: string; slug: string; excerpt: string | null};
 
-let titlesWithBacklinks: Record<string, Backlink[]> = {};
+let titlesWithBacklinks: Record<string, Backlink[]>;
 /**
  * Provides a map of titles and aliases to all backlinks from other files.
  */
