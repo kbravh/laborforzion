@@ -176,7 +176,12 @@ const getBracketLinks =
         continue;
       }
       const [title = '', alias] = text?.split('|');
-      links.push({link, title, alias, excerpt: excerpt.trim()});
+      links.push({
+        link,
+        title,
+        alias,
+        excerpt: cleanupExcerpt({excerpt, link, title, alias}),
+      });
     }
     return links;
   };
@@ -187,6 +192,22 @@ export const getOutgoingLinks = getBracketLinks(
 export const getEmbedLinks = getBracketLinks(
   /(?:\w+\W){0,10}(!\[\[([^\[\]]+)\]\])(?:\W?\w+\W){0,10}/g
 );
+
+export const cleanupExcerpt = ({
+  excerpt,
+  link,
+  title,
+  alias,
+}: {
+  excerpt: string;
+  link: string;
+  title: string;
+  alias?: string;
+}): string =>
+  excerpt
+    .replace(/\n/g, ' ')
+    .replace(link, alias ?? title)
+    .trim();
 
 export type Backlink = {title: string; slug: string; excerpt: string | null};
 

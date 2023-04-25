@@ -1,7 +1,6 @@
 import {MDXRemote} from 'next-mdx-remote';
-import Link from 'next/link';
-import {HoverUnderline} from '../components/links';
 import type {PostProps} from './models/Post';
+import {Backlinks} from '../components/Backlinks';
 
 export const PostTemplate = ({
   source,
@@ -39,23 +38,3 @@ const Metadata = ({frontmatter}: Pick<PostProps, 'frontmatter'>) => {
     </div>
   );
 };
-
-const Backlinks = ({backlinks}: Pick<PostProps, 'backlinks'>): JSX.Element => (
-  <div>
-    <h2>Pages that reference this note</h2>
-    <ul className="flex flex-col gap-2">
-      {backlinks.map(({title, slug, excerpt}) => (
-        <li key={slug}>
-          <article>
-            <HoverUnderline>
-              <Link href={`/${slug}`}>
-                <span className="text-lg">{title}</span>
-              </Link>
-              {excerpt ? `"...${excerpt}..."` : ''}
-            </HoverUnderline>
-          </article>
-        </li>
-      ))}
-    </ul>
-  </div>
-);

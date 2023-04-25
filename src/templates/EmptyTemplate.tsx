@@ -1,6 +1,5 @@
-import Link from 'next/link';
-import {HoverUnderline} from '../components/links';
 import type {EmptyPostProps} from './models/Post';
+import { Backlinks } from '../components/Backlinks';
 
 export const EmptyTemplate = ({backlinks, title}: EmptyPostProps) => {
   return (
@@ -18,27 +17,5 @@ export const EmptyTemplate = ({backlinks, title}: EmptyPostProps) => {
 const Title = ({title}: Pick<EmptyPostProps, 'title'>): JSX.Element => (
   <div className="border-slate-800 border-solid border-b-2">
     <h1 className="mb-0">{title}</h1>
-  </div>
-);
-
-const Backlinks = ({
-  backlinks,
-}: Pick<EmptyPostProps, 'backlinks'>): JSX.Element => (
-  <div>
-    <h2>Pages that reference this note</h2>
-    <ul className="flex flex-col gap-2">
-      {backlinks.map(({title, slug, excerpt}) => (
-        <li key={slug}>
-          <article>
-            <HoverUnderline>
-              <Link href={`/${slug}`}>
-                <span className="text-lg">{title}</span>
-              </Link>
-              {excerpt ? `"...${excerpt}..."` : ''}
-            </HoverUnderline>
-          </article>
-        </li>
-      ))}
-    </ul>
   </div>
 );
