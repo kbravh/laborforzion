@@ -15,9 +15,11 @@ export const Backlinks = ({backlinks}: BacklinkProps): JSX.Element => (
           <article>
             <HoverUnderline>
               <Link href={`/${slug}`}>
-                <span className="text-lg font-semibold">{title}: </span>
+                <span>
+                  <span className="text-lg font-semibold">{title}: </span>
+                  {excerpt ? `"...${excerpt}..."` : ''}
+                </span>
               </Link>
-              {excerpt ? `"...${excerpt}..."` : ''}
             </HoverUnderline>
           </article>
         </li>
