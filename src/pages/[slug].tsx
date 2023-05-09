@@ -20,6 +20,7 @@ import matter from 'gray-matter';
 import {ImageProps} from '../components/mdx/Image';
 import {HoverUnderlineProps} from '../components/links';
 import {EmptyTemplate} from '../templates/EmptyTemplate';
+import {dedupeArray} from '../utils/array';
 
 type PostPageProps =
   | {
@@ -140,11 +141,11 @@ export const getStaticProps: GetStaticProps<PostPageProps> = async ({
         source: content.compiledSource,
         frontmatter: parsedFrontmatter,
         slug,
-        backlinks,
+        backlinks: dedupeArray(backlinks, backlink => backlink.slug),
         type: 'note',
       },
     };
-  // otherwise, let's check if it's an empty page referenced in other articles
+    // otherwise, let's check if it's an empty page referenced in other articles
   } else {
     const title = slugToTitle[slug];
     if (!title) {
@@ -165,7 +166,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const {slugToTitle} = getTitleAndSlugMaps();
 
   // Generate paths based on all of our slugs
-  const paths = [...Object.keys(slugToTitle).map(slug => ({params: {slug}}))]
+  const paths = [...Object.keys(slugToTitle).map(slug => ({params: {slug}}))];
 
   return {
     paths,

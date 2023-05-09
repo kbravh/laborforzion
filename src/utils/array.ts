@@ -14,3 +14,19 @@ export const splitArray = <T>(groups: number, items: T[]): T[][] => {
 
   return collection;
 };
+
+export const dedupeArray = <T>(
+  array: T[],
+  keySelector: (item: T) => any
+): T[] => {
+  const seen = new Set();
+  return array.filter(item => {
+    const key = keySelector(item);
+    if (seen.has(key)) {
+      return false;
+    } else {
+      seen.add(key);
+      return true;
+    }
+  });
+};
