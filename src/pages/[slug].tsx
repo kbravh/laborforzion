@@ -88,7 +88,7 @@ const components = {
   HoverUnderline: dynamic<HoverUnderlineProps>(() =>
     import('../components/links').then(mod => mod.HoverUnderline)
   ),
-  Image: dynamic<ImageProps>(
+  img: dynamic<ImageProps>(
     () => import('../components/mdx/Image').then(mod => mod.Image),
     {ssr: false}
   ),

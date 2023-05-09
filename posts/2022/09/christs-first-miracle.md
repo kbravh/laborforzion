@@ -5,11 +5,7 @@ date: 2022-09-20T14:29:18.607Z
 language: en_US
 ---
 
-<Image
-  src="https://res.cloudinary.com/drn1fmjus/image/upload/c_scale,w_700/v1663683943/laborforzion/jamesseward-thefirstmiracle_jyt07a.jpg"
-  alt="Christ instructing the servants at the wedding feast. The First Miracle, painting by James Seward"
-  width="700px"
-/>
+![Christ instructing the servants at the wedding feast. The First Miracle, painting by James Seward](https://res.cloudinary.com/drn1fmjus/image/upload/c_scale,w_700/v1663683943/laborforzion/jamesseward-thefirstmiracle_jyt07a.jpg)
 
 ## The Feast at Cana
 Christ's first recorded miracle in the New Testament occurs at the wedding feast at Cana. Christ's mother tells him that the wine has run out, and she asks for his assistance. Christ then miraculously turns water into wine, which is then served to the guests at the feast [^1]. This story is quite well known, but what was the actual purpose of the miracle? Why was this the way that Christ decided to present himself to the world as the Messiah?
