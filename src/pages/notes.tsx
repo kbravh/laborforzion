@@ -28,7 +28,7 @@ const NotesPage: NextPage<Props> = ({posts}) => {
           </h1>
         </div>
         <main className="flex flex-col items-center mt-8 flex-grow max-w-5xl">
-          <div className="max-w-2xl sm:mx-20 mx-8 flex flex-col gap-4">
+          <div className="max-w-2xl sm:mx-20 mx-8 flex flex-col gap-8">
             {posts.map(post => (
               <Link
                 key={`/${post.slug}`}
@@ -36,7 +36,7 @@ const NotesPage: NextPage<Props> = ({posts}) => {
               >
                 <article
                   className={clsx(
-                    'rounded-sm border border-emerald-100 shadow-sm shadow-emerald-800 bg-slate-100',
+                    'rounded-sm border border-emerald-100 shadow-sm shadow-emerald-800',
                     'relative px-6 py-5 flex flex-col justify-between space-y-3',
                     'hover:border-emerald-400 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-emerald-500',
                     'cursor-pointer select-none'
