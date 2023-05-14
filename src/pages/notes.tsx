@@ -36,7 +36,7 @@ const NotesPage: NextPage<Props> = ({posts}) => {
               >
                 <article
                   className={clsx(
-                    // 'rounded-sm border border-emerald-100 shadow-sm shadow-emerald-800',
+                    'rounded-sm border border-emerald-100 shadow-sm shadow-emerald-800',
                     'relative px-6 py-5 flex flex-col justify-between space-y-3',
                     'hover:border-emerald-400 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-emerald-500',
                     'cursor-pointer select-none'
