@@ -1,6 +1,6 @@
 ---
 title: The Good Samaritan
-description: Explore the deep-rooted faith of biblical prophets through the lens of the Hebrew Prophetic Perfect, a unique linguistic feature in scriptures.
+description: A look into the parable of the good Samaritan as a symbol of Christ.
 date: 2023-04-22T02:34:47.361Z
 updated:
 language: en_US
